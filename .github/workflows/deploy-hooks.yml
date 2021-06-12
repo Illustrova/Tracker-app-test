@@ -7,7 +7,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    if: needs.version-check.outputs.changed == 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
