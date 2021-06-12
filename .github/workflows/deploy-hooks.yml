@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: |
-          yarn install
+          npm ci
       - name: Build product
         run: |
           yarn build
