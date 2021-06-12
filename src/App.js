@@ -3,7 +3,6 @@ import Header from "./components/header";
 import Button from "./components/button";
 import Timer from "./components/timer";
 import Table from "./components/table";
-
 import { getHours, getMinutes, getSeconds } from "./utils";
 
 function App() {
