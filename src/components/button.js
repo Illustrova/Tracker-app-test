@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const variants = {
   start: "bg-yellow-500 hover:bg-yellow-600",

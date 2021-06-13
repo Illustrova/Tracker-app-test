@@ -1,29 +1,35 @@
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useInterval } from "../hooks/useInterval";
 import { getHours, getMinutes, getSeconds } from "../utils";
-export default function Timer({ isTracking, handleEnd }) {
-  const [isActive, setIsActive] = useState(isTracking);
+
+export default function Timer({ isTracking, saveData }) {
   const [counter, setCounter] = useState(0);
+  const [interval, setInterval] = useState(null);
+  const counterRef = useRef(0);
 
   useEffect(() => {
-    if (isActive) {
-      handleEnd(counter);
-    } else {
+    counterRef.current = counter;
+  });
+
+  useInterval(() => {
+    if (isTracking) {
+      setCounter(counter + 1000);
+    }
+  }, interval);
+
+  useEffect(() => {
+    const startTimer = () => {
       setCounter(0);
-    }
-    setIsActive(isTracking);
-  }, [isTracking, isActive]);
+      setInterval(1000);
+    };
 
-  useEffect(() => {
-    let counterId;
+    const stopTimer = () => {
+      setInterval(null);
+      saveData(counterRef.current);
+    };
 
-    if (isActive) {
-      counterId = setInterval(() => {
-        setCounter((counter) => counter + 1000);
-      }, 1000);
-    }
-
-    return () => clearInterval(counterId);
-  }, [isActive, counter]);
+    return isTracking ? startTimer() : stopTimer();
+  }, [isTracking, saveData]);
 
   return (
     <div className="my-12 text-8xl">

@@ -29,10 +29,10 @@ export default function Table({ data }) {
       </thead>
       <tbody className="h-4 text-gray-800 bg-gray-200">
         {data && data.length > 0 ? (
-          data.map((item) => <Row {...item} />)
+          data.map((item) => <Row {...item} key={item.start} />)
         ) : (
           <tr className="text-gray-800 bg-white border-4 border-gray-200">
-            <td colspan="4">No data tracked yet</td>
+            <td colSpan="4">No data tracked yet</td>
           </tr>
         )}
       </tbody>

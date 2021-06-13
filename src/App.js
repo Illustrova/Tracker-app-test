@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Header from "./components/header";
 import Button from "./components/button";
 import Timer from "./components/timer";
@@ -34,10 +34,10 @@ function App() {
     setIsTracking(!isTracking);
   };
 
-  const getTimerData = (ms) => {
-    setCurrentSession({ ...currentSession, duration: ms });
+  const getTimerData = useCallback((ms) => {
+    setCurrentSession((c) => ({ ...c, duration: ms }));
     setTotalTime((prev) => prev + ms);
-  };
+  }, []);
   return (
     <div className="w-full h-screen text-gray-100 bg-blue-900">
       <Header />
@@ -46,7 +46,7 @@ function App() {
           <Timer
             isTracking={isTracking}
             count={!isTracking && 0}
-            handleEnd={getTimerData}
+            saveData={getTimerData}
           />
           <Button
             variant={isTracking ? "stop" : "start"}
