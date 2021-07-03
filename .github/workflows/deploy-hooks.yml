@@ -1,8 +1,9 @@
-name: Deploy react hooks
+name: Deploy
 on:
   push:
-    branches:
-      - 'react-hooks'
+    branches-ignore:
+      - main
+      - gh-pages
 
 jobs:
   build-and-deploy:
@@ -11,6 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Extract branch name
+      - uses: nelonoel/branch-name@v1.0.1
+        
+      - run: echo ${BRANCH_NAME}
+      
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
@@ -40,4 +46,4 @@ jobs:
         with:
           folder: ./build
           branch: gh-pages
-          target-folder: react-hooks
+          target-folder: ${BRANCH_NAME}
