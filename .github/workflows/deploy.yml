@@ -46,4 +46,4 @@ jobs:
         with:
           folder: ./build
           branch: gh-pages
-          target-folder: ${{ BRANCH_NAME }}
+          target-folder: ${{ env.BRANCH_NAME }}
