@@ -14,9 +14,7 @@ jobs:
 
       - name: Extract branch name
         uses: nelonoel/branch-name@v1.0.1
-        
-      - run: echo ${BRANCH_NAME}
-      
+              
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
@@ -48,4 +46,4 @@ jobs:
         with:
           folder: ./build
           branch: gh-pages
-          target-folder: ${BRANCH_NAME}
+          target-folder: ${{ BRANCH_NAME }}
