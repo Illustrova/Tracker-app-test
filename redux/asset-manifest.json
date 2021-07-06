@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.31e86ec0.chunk.css",
-    "main.js": "/static/js/main.b752cf9f.chunk.js",
-    "main.js.map": "/static/js/main.b752cf9f.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ac17498d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ac17498d.js.map",
-    "static/js/2.bb4a6eec.chunk.js": "/static/js/2.bb4a6eec.chunk.js",
-    "static/js/2.bb4a6eec.chunk.js.map": "/static/js/2.bb4a6eec.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.31e86ec0.chunk.css.map": "/static/css/main.31e86ec0.chunk.css.map",
-    "static/js/2.bb4a6eec.chunk.js.LICENSE.txt": "/static/js/2.bb4a6eec.chunk.js.LICENSE.txt"
+    "main.css": "/tracker-app/redux/static/css/main.31e86ec0.chunk.css",
+    "main.js": "/tracker-app/redux/static/js/main.b752cf9f.chunk.js",
+    "main.js.map": "/tracker-app/redux/static/js/main.b752cf9f.chunk.js.map",
+    "runtime-main.js": "/tracker-app/redux/static/js/runtime-main.222d6226.js",
+    "runtime-main.js.map": "/tracker-app/redux/static/js/runtime-main.222d6226.js.map",
+    "static/js/2.bb4a6eec.chunk.js": "/tracker-app/redux/static/js/2.bb4a6eec.chunk.js",
+    "static/js/2.bb4a6eec.chunk.js.map": "/tracker-app/redux/static/js/2.bb4a6eec.chunk.js.map",
+    "index.html": "/tracker-app/redux/index.html",
+    "static/css/main.31e86ec0.chunk.css.map": "/tracker-app/redux/static/css/main.31e86ec0.chunk.css.map",
+    "static/js/2.bb4a6eec.chunk.js.LICENSE.txt": "/tracker-app/redux/static/js/2.bb4a6eec.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ac17498d.js",
+    "static/js/runtime-main.222d6226.js",
     "static/js/2.bb4a6eec.chunk.js",
     "static/css/main.31e86ec0.chunk.css",
     "static/js/main.b752cf9f.chunk.js"
