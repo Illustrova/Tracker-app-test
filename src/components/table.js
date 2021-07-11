@@ -28,7 +28,7 @@ export default function Table({ data }) {
           data.map((item) => <Row key={item.start} {...item} />)
         ) : (
           <tr className="text-gray-800 bg-white border-4 border-gray-200">
-            <td colspan="4">No data tracked yet</td>
+            <td colSpan="4">No data tracked yet</td>
           </tr>
         )}
       </tbody>
