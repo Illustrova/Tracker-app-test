@@ -4,4 +4,7 @@ module.exports = {
       plugins: [require("tailwindcss"), require("autoprefixer")],
     },
   },
+  babel: {
+    plugins: [["@babel/plugin-proposal-class-properties", { loose: false }]],
+  },
 };

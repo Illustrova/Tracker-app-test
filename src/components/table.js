@@ -1,13 +1,22 @@
+import { observer } from "mobx-react-lite";
+import trackerStore from "../stores/trackerStore";
+
+import { getHours, getMinutes, getSeconds } from "../utils";
+
 const Row = ({ start, end, duration }) => {
   return (
     <tr className="bg-white border-4 border-gray-200">
-      <td className="px-16 py-2">{start}</td>
-      <td className="px-16 py-2">{end}</td>
-      <td className="px-16 py-2">{duration}</td>
+      <td className="px-16 py-2">{new Date(start).toLocaleString()}</td>
+      <td className="px-16 py-2">{new Date(end).toLocaleString()}</td>
+      <td className="px-16 py-2">
+        {getHours(duration)}:{getMinutes(duration)}:{getSeconds(duration)}
+      </td>
     </tr>
   );
 };
-export default function Table({ data }) {
+
+const Table = () => {
+  const data = trackerStore.sessions;
   return (
     <table className="min-w-full table-auto">
       <thead className="justify-between">
@@ -28,10 +37,12 @@ export default function Table({ data }) {
           data.map((item) => <Row key={item.start} {...item} />)
         ) : (
           <tr className="text-gray-800 bg-white border-4 border-gray-200">
-            <td colspan="4">No data tracked yet</td>
+            <td colSpan="4">No data tracked yet</td>
           </tr>
         )}
       </tbody>
     </table>
   );
-}
+};
+
+export default observer(Table);
